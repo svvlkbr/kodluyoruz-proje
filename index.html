@@ -1,108 +1,150 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangi Renksin?</title>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center;}
-        .question { margin: 20px 0;}
-        .options img { width: 150px; height: 150px; cursor: pointer; margin: 10px; border: 3px solid transparent;}
-        .options img.selected { border-color: red;}
-        #result { display: none; font-size: 24px; font-weight: bold;}
-   </style>
-</head>
-<body>
-    <h1>Seçtiğin Resimlere Göre Hangi Renksin?</h1>
-    <div id="quiz">
-        <div class="question" id="q1">
-            <p>1. Hangi manzara seni en çok mutlu eder?</p>
-            <div class="options">
-                <img src="resimler/resim1.jpg" onclick="selectAnswer(1, 'mavi', this)">
-                <img src="resimler/resim2.jpg" onclick="selectAnswer(1, 'yeşil', this)">
-                <img src="resimler/resim3.jpg" onclick="selectAnswer(1, 'turuncu', this)">
-                <img src="resimler/resim4.jpg" onclick="selectAnswer(1, 'beyaz', this)">
-            </div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Hangi Renksin?</div>
+    </header>
+
+    <div class="container">
+      <h1>Seçtiğin Resimlere Göre Hangi Renksin?</h1>
+      <div id="quiz">
+        <div class="question active" id="q1">
+          <p>1. Hangi manzara seni en çok mutlu eder?</p>
+          <div class="options">
+            <img
+              src="/resimler/resim1.jpg"
+              onclick="selectAnswer(1, 'mavi', this)"
+            />
+            <img
+              src="/resimler/resim2.jpg"
+              onclick="selectAnswer(1, 'yeşil', this)"
+            />
+            <img
+              src="/resimler/resim3.jpg"
+              onclick="selectAnswer(1, 'turuncu', this)"
+            />
+            <img
+              src="/resimler/resim4.jpg"
+              onclick="selectAnswer(1, 'beyaz', this)"
+            />
+          </div>
+          <button class="next-btn" onclick="nextQuestion(1)">İleri</button>
         </div>
 
         <div class="question" id="q2">
-            <p>2. Bu yiyeceklerden hangisini seçersin?</p>
-            <div class="options">
-                <img src="resimler/resim5.jpg" onclick="selectAnswer(2, 'kırmızı', this)">
-                <img src="resimler/resim6.jpg" onclick="selectAnswer(2, 'kahverengi', this)">
-                <img src="resimler/resim7.jpg" onclick="selectAnswer(2, 'yeşil', this)">
-                <img src="resimler/resim8.jpg" onclick="selectAnswer(2, 'turkuaz', this)">
-            </div>
+          <p>2. Bu yiyeceklerden hangisini seçersin?</p>
+          <div class="options">
+            <img
+              src="/resimler/resim5.jpg"
+              onclick="selectAnswer(2, 'kırmızı', this)"
+            />
+            <img
+              src="/resimler/resim6.jpg"
+              onclick="selectAnswer(2, 'kahverengi', this)"
+            />
+            <img
+              src="/resimler/resim7.jpg"
+              onclick="selectAnswer(2, 'yeşil', this)"
+            />
+            <img
+              src="/resimler/resim8.jpg"
+              onclick="selectAnswer(2, 'turkuaz', this)"
+            />
+          </div>
+          <button class="prev-btn" onclick="previousQuestion(2)">Geri</button>
+          <button class="next-btn" onclick="nextQuestion(2)">İleri</button>
         </div>
 
         <div class="question" id="q3">
-            <p>3. Bir tatil yeri seç?</p>
-            <div class="options">
-                <img src="resimler/resim9.jpg" onclick="selectAnswer(3, 'mavi', this)">
-                <img src="resimler/resim10.jpg" onclick="selectAnswer(3, 'yeşil', this)">
-                <img src="resimler/resim11.jpg" onclick="selectAnswer(3, 'siyah', this)">
-                <img src="resimler/resim12.jpg" onclick="selectAnswer(3, 'pembe', this)">
-            </div>
+          <p>3. Bir tatil yeri seç?</p>
+          <div class="options">
+            <img
+              src="/resimler/resim9.jpg"
+              onclick="selectAnswer(3, 'mavi', this)"
+            />
+            <img
+              src="/resimler/resim10.jpg"
+              onclick="selectAnswer(3, 'yeşil', this)"
+            />
+            <img
+              src="/resimler/resim11.jpg"
+              onclick="selectAnswer(3, 'siyah', this)"
+            />
+            <img
+              src="/resimler/resim12.jpg"
+              onclick="selectAnswer(3, 'pembe', this)"
+            />
+          </div>
+          <button class="prev-btn" onclick="previousQuestion(3)">Geri</button>
+          <button class="next-btn" onclick="nextQuestion(3)">İleri</button>
         </div>
 
         <div class="question" id="q4">
-            <p>4. Bir araba  seç?</p>
-            <div class="options">
-                <img src="resimler/resim13.jpg" onclick="selectAnswer(4, 'mavi', this)">
-                <img src="resimler/resim14.jpg" onclick="selectAnswer(4, 'yeşil', this)">
-                <img src="resimler/resim15.jpg" onclick="selectAnswer(4, 'siyah', this)">
-                <img src="resimler/resim16.jpg" onclick="selectAnswer(4, 'pembe', this)">
-            </div>
+          <p>4. Bir araba seç?</p>
+          <div class="options">
+            <img
+              src="/resimler/resim13.jpg"
+              onclick="selectAnswer(4, 'mavi', this)"
+            />
+            <img
+              src="/resimler/resim14.jpg"
+              onclick="selectAnswer(4, 'yeşil', this)"
+            />
+            <img
+              src="/resimler/resim15.jpg"
+              onclick="selectAnswer(4, 'siyah', this)"
+            />
+            <img
+              src="/resimler/resim16.jpg"
+              onclick="selectAnswer(4, 'pembe', this)"
+            />
+          </div>
+          <button class="prev-btn" onclick="previousQuestion(4)">Geri</button>
+          <button class="next-btn" onclick="nextQuestion(4)">İleri</button>
         </div>
 
         <div class="question" id="q5">
-            <p>5. Bir çiçek seç?</p>
-            <div class="options">
-                <img src="resimler/resim17.jpg" onclick="selectAnswer(5, 'kırmızı', this)">
-                <img src="resimler/resim18.jpg" onclick="selectAnswer(5, 'sarı', this)">
-                <img src="resimler/resim19.jpg" onclick="selectAnswer(5, 'pembe', this)">
-                <img src="resimler/resim20.jpg" onclick="selectAnswer(5, 'yeşil', this)">
-            </div>
+          <p>5. Bir çiçek seç?</p>
+          <div class="options">
+            <img
+              src="/resimler/resim17.jpg"
+              onclick="selectAnswer(5, 'kırmızı', this)"
+            />
+            <img
+              src="/resimler/resim18.jpg"
+              onclick="selectAnswer(5, 'sarı', this)"
+            />
+            <img
+              src="/resimler/resim19.jpg"
+              onclick="selectAnswer(5, 'pembe', this)"
+            />
+            <img
+              src="/resimler/resim20.jpg"
+              onclick="selectAnswer(5, 'yeşil', this)"
+            />
+          </div>
+          <button class="prev-btn" onclick="previousQuestion(5)">Geri</button>
+          <button class="show-result-btn" onclick="showResult()">
+            Sonucu Göster
+          </button>
         </div>
+      </div>
+
+      <p id="result"></p>
+      <button class="restart-btn" onclick="restartQuiz()">Baştan Başla</button>
     </div>
 
-    <button onclick="showResult()">Sonucu Göster</button>
-    <p id="result"></p>
-
-    <script>
-        let scores= {};
-
-        function selectAnswer(question, color, element) {
-            scores[question]= color;
-            console.log("Seçim yapıldı:", scores);
-
-            let images =element.parentElement.getElementsByTagName('img');
-            for (let img of images) {
-                img.classList.remove('selected');
-            }
-            element.classList.add('selected');
-        }
-
-        function showResult(){
-            let requiredQuestions = [1,2,3,4,5];
-            let answeredQuestions = Object.keys(scores).map(Number);
-
-            let missingQuestions = requiredQuestions.filter(q => !answeredQuestions.includes(q));
-            if (missingQuestions.length > 0) {
-                alert("Lütfen tüm sorulara bir cevap seçin");
-                return;
-            }
-            
-            let colorCounts= {};
-            Object.values(scores).forEach(color => {
-                colorCounts[color]=(colorCounts[color] ||0 )+1;
-            });
-            let bestColor = Object.keys(colorCounts).reduce((a, b) => colorCounts[a] > colorCounts[b] ? a : b);
-
-            document.getElementById('result').innerText = "Senin rengin: " + bestColor.toUpperCase();
-            document.getElementById('result').style.display = "block";
-}
-    </script>
-</body>
+    <footer>© 2025 Hangi Renksin? Tüm hakları saklıdır.</footer>
+    <script src="script.js" defer></script>
+  </body>
 </html>
